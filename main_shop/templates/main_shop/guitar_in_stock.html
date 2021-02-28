@@ -10,7 +10,7 @@
 <!--Sign Uo Form-->
 <div class="modal" id="id01">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close
-Modal">&times</span>
+Modal">times</span>
     <form class="modal-content" method="post">
         <div class="container1">
             {% csrf_token %}
@@ -58,6 +58,28 @@ Modal">&times</span>
     <button class="btn" onclick="filterSelection('column b.c.rich')"> B.S.Rich</button>
 </div>
 
+<!-- ну гітари со списка явно отак должни братись, а не хардкодом  -->
+<div class="row">
+<!--    guitar замінить на guitars, а el на guitar, так лучше чітаємость -->
+    {% for el in guitar %}
+        <div class="column {{ el.guitar_model }}" id="guitar-block-{{ el.pk }}">
+            <div class="content">
+                <img src="{{ el.guitar_img.url }}" style="width:100%">
+                <h4>{{ el.brand }}</h4>
+                <p>{{ el.guitar_model }}</p>
+                <button class="button-for-order"
+                        onclick="MakeOrder(
+                            'guitar model {{ el.model }}',
+                             {{guitars_json}}
+                             )">
+                    {{ el }}
+                    make an order {{ el.price }}$
+                </button>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<!-- оцей блок так точно нада тупо стерти з лиця зємлі :) -->
 <div class="row">
     <div class="column ibanez">
         <div class="content">
@@ -142,7 +164,9 @@ Modal">&times</span>
 <!------------------------------------------------------------------------------------------------------------------->
 
 <!--Order Form-->
-
+<!--
+Коли рендериш нову формочку - нада мінять її значєнія жсом
+-->
 <div id="order_form" class="order_form">
     <form class="form_order-content">
         <div class="container_for_order">

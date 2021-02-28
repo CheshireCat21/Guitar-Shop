@@ -23,9 +23,9 @@ function filterSelection(c) {
 }
 
 
-function MakeOrder(c) {
+function MakeOrder(text, guitar) {
     order_form.style.display = 'block';
-    console.log(c);
+    console.log(text, guitar);
 }
 
 window.onclick = function(event) {
