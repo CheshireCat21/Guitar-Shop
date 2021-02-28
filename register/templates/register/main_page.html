@@ -1,0 +1,39 @@
+{% extends 'register/main_layout.html' %}
+{% load static %}
+
+{% block body %}
+<!--Sign Uo Form-->
+<div class="modal" id="id01">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close
+Modal">&times</span>
+    <form class="modal-content" method="post">
+        <div class="container1">
+            {% csrf_token %}
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+            <label><b>Name </b></label>
+            {{ form.name }}
+            <label><b>Nick Name </b></label>
+            {{ form.nick_name }}
+            <label><b>Email</b></label>
+            {{ form.email }}
+            <label><b>Password</b></label>
+            {{ form.password }}
+            <label><b>Repeat Password</b></label>
+            {{ form.repeat_password }}
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label><br>
+            <h1 style="color: red">{{ error }}</h1>
+        </div>
+
+        <div class="clearfix">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">
+        Cancel</button>
+            <button type="submit" class="signupbtn">Sign Up</button>
+        </div>
+    </form>
+</div>
+<!--Sign Uo Form-->
+{% endblock %}

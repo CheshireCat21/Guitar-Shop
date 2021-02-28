@@ -1,0 +1,171 @@
+{% extends 'register/main_layout.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'main_shop/css/guitars_in_stock.css' %}">
+{% endblock%}
+
+{% block body %}
+<!------------------------------------------------------------------------------------------------------------------->
+<!--Sign Uo Form-->
+<div class="modal" id="id01">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close
+Modal">&times</span>
+    <form class="modal-content" method="post">
+        <div class="container1">
+            {% csrf_token %}
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+            <label><b>Name </b></label>
+            {{ form.name }}
+            <label><b>Nick Name </b></label>
+            {{ form.nick_name }}
+            <label><b>Email</b></label>
+            {{ form.email }}
+            <label><b>Password</b></label>
+            {{ form.password }}
+            <label><b>Repeat Password</b></label>
+            {{ form.repeat_password }}
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label><br>
+            <h1 style="color: red">{{ error }}</h1>
+        </div>
+
+        <div class="clearfix">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">
+        Cancel</button>
+            <button type="submit" class="signupbtn">Sign Up</button>
+        </div>
+    </form>
+</div>
+<!--Sign Uo Form-->
+
+<!------------------------------------------------------------------------------------------------------------------->
+
+<!--Guitars in stock-->
+<h1 class="second_logo">Guitars</h1>
+<hr class="new1">
+
+<!--<h6 id="1" style="font-size:50px;color:black;"></h6>-->
+
+
+<div id="myBtnContainer">
+    <button class="btn" onclick="filterSelectionAll()"> Show all guitars</button>
+    <button class="btn" onclick="filterSelection('column ibanez')"> Ibanez</button>
+    <button class="btn" onclick="filterSelection('column ltd')"> LTD</button>
+    <button class="btn" onclick="filterSelection('column b.c.rich')"> B.S.Rich</button>
+</div>
+
+<div class="row">
+    <div class="column ibanez">
+        <div class="content">
+            <img src="{% static 'main_shop/img/guitar1.jpg' %}" alt="Lights" style="width:100%">
+            <h4>Ibanez</h4>
+            <p>Guitar model - 1</p>
+            <button class="button-for-order" onclick="MakeOrder('guitar model 1')">make an order</button>
+        </div>
+
+    </div>
+
+    <div class="column ibanez">
+        <div class="content">
+        <img src="{% static 'main_shop/img/guitar2.jpg' %}" alt="Lights" style="width:100%">
+          <h4>Ibanez</h4>
+          <p>Guitar model - 2</p>
+          <button class="button-for-order" onclick="MakeOrder('guitar model 2')">make an order</button>
+        </div>
+    </div>
+
+    <div class="column ibanez">
+        <div class="content">
+        <img src="{% static 'main_shop/img/guitar3.jpg' %}" alt="Lights" style="width:100%">
+          <h4>Ibanez</h4>
+          <p>Guitar model - 3</p>
+          <button class="button-for-order" onclick="MakeOrder('guitar model 3')">make an order</button>
+        </div>
+    </div>
+
+    <div class="column ltd">
+        <div class="content">
+          <img src="{% static 'main_shop/img/guitar4.jpg' %}" alt="Car" style="width:100%">
+          <h4>LTD</h4>
+          <p>Guitar model - 4</p>
+          <button class="button-for-order" onclick="MakeOrder('guitar model 4')">make an order</button>
+        </div>
+    </div>
+    <div class="column ltd">
+        <div class="content">
+        <img src="{% static 'main_shop/img/guitar5.jpg' %}" alt="Car" style="width:100%">
+          <h4>LTD</h4>
+          <p>Guitar model - 5</p>
+          <button class="button-for-order" onclick="MakeOrder('guitar model 5')">make an order</button>
+        </div>
+    </div>
+    <div class="column ltd">
+        <div class="content">
+        <img src="{% static 'main_shop/img/guitar6.jpg' %}" alt="Car" style="width:100%">
+          <h4>LTD</h4>
+          <p>Guitar model - 6</p>
+          <button class="button-for-order" onclick="MakeOrder('guitar model 6')">make an order</button>
+        </div>
+    </div>
+
+    <div class="column b.c.rich">
+        <div class="content">
+          <img src="{% static 'main_shop/img/guitar7.jpg' %}" alt="Car" style="width:100%">
+          <h4>B.S.Rich</h4>
+          <p>Guitar model - 7</p>
+          <button class="button-for-order" onclick="MakeOrder('guitar model 7')">make an order</button>
+        </div>
+    </div>
+    <div class="column b.c.rich">
+        <div class="content">
+        <img src="{% static 'main_shop/img/guitar8.jpg' %}" alt="Car" style="width:100%">
+          <h4>B.S.Rich</h4>
+          <p>Guitar model - 8</p>
+          <button class="button-for-order" onclick="MakeOrder('guitar model 8')">make an order</button>
+        </div>
+    </div>
+    <div class="column b.c.rich">
+        <div class="content">
+        <img src="{% static 'main_shop/img/guitar9.jpg' %}" alt="Car" style="width:100%">
+          <h4>B.S.Rich</h4>
+          <p>Guitar model - 9</p>
+          <button class="button-for-order" onclick="MakeOrder('guitar model 9')">make an order</button>
+        </div>
+    </div>
+</div>
+<!--Guitars in stock-->
+
+<!------------------------------------------------------------------------------------------------------------------->
+
+<!--Order Form-->
+
+<div id="order_form" class="order_form">
+    <form class="form_order-content">
+        <div class="container_for_order">
+            <h1>Make your order</h1>
+            <hr>
+            {% for el in guitar %}
+                {% if el.guitar_model == guitar_ex %}
+                        <p class="gt_inf1">Guitar Model: {{ el.guitar_model }}</p>
+                        <p class="gt_inf2">Guitar Brand: {{ el.brand }}</p>
+                        <p class="gt_inf3">Guitar Price: {{ el.price }}</p>
+                    <img src="{{ el.guitar_img.url }}" style="width:100%" alt=""><br>
+                {% endif %}
+            {% endfor %}
+            <button class="buy-button">buy it</button>
+        </div>
+    </form>
+</div>
+
+<!--Order Form-->
+
+<!------------------------------------------------------------------------------------------------------------------->
+
+{% endblock %}
+
+
+

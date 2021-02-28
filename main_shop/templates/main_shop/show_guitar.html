@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for el in guitar %}
+        <h3>{{ el.guitar_model }}</h3><br>
+        <h3>{{ el.brand }}</h3><br>
+        <h3>{{ el.price }}</h3><br>
+        <img src="{{ el.guitar_img.url }}" alt="">
+    {% endfor %}
+</body>
+</html>

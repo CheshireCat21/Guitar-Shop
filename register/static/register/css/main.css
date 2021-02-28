@@ -1,0 +1,321 @@
+/*------------Layout_CSS-------------*/
+
+
+body {
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* background img */
+
+body, html {
+    height: 100%;
+}
+
+body {
+    background-image: url("/static/register/img/1.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* background img */
+
+
+
+/*----------------------------*/
+
+
+
+/* Responsive header */
+
+
+.header {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 50px 10px;
+}
+
+.header a {
+    float: left;
+    color: white;
+    text-align: center;
+    margin: -10px 10px;
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header a.logo {
+    font-size: 30px;
+    font-family: 'Ballet', cursive;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.header-right {
+    float: right;
+}
+
+
+.button {
+    display: inline;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 30px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    position: relative;
+    top: -20px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+@media (max-width: 1085px){
+    .button{
+        margin-top: 50px;
+        left: -1950px;
+        top: 10px;
+        transition: 0.5s;
+        display: block;
+        z-index: 1;
+    }
+}
+
+.button_change {
+    left: 0px;
+    transition: 0.3s;
+}
+
+@media (max-width: 320px){
+    .header a.logo{
+        font-size: 25px;
+    }
+}
+
+
+
+/* Responsive header */
+
+
+
+/*----------------------------*/
+
+
+
+/* Menu Icon */
+
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+    float: right;
+    position: relative;
+    top: -20px;
+    right: 15px;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 1);
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.header_for_top {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 35%;
+    left: -2560px;
+    transition: 0.2s;
+}
+
+.header_for_top_on {
+    left: 0px;
+}
+
+@media (min-width: 1086px){
+    .header_for_top{
+        display: none;
+    }
+}
+
+@media (min-width: 1086px){
+    .container{
+        display:none;
+    }
+}
+
+/* Menu Icon */
+
+
+
+/*----------------------------*/
+
+
+
+/* Sign Up Window */
+
+* {box-sizing: border-box}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding:15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline:none;
+}
+
+.cancelbtn, .signupbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 2.5%;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    opacity: 0.9;
+    font-size: 25px;
+}
+
+.cancelbtn:hover, .signupbtn:hover {
+    opacity:1;
+}
+
+.cancelbtn {
+  background-color: #f44336;
+}
+
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 45%;
+}
+
+.container1 {
+    padding 16px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 1);
+    margin: 2% auto 15% auto;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+hr {
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    margin-bottom: 25px;
+}
+
+.close {
+    position: absolute;
+    float: left;
+    left: 25px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    padding-left: 15px;
+}
+
+@media screen and (max-width: 340px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .modal-content {
+    margin-top: 35px;
+    width: 100%;
+    }
+}
+/* Sign Up Window */
+
+/*----------------------------*/

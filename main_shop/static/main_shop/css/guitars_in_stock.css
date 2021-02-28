@@ -1,0 +1,157 @@
+/*------------------------------------------------------------------------------------------------------------------*/
+/*grid_photo_guitars*/
+.main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.second_logo {
+    font-size: 45px;
+    word-break: break-all;
+    padding: 0.1em;
+    margin-left: 5px;
+    color: white;
+}
+
+h4 {
+    margin-top: -20px;
+    margin-bottom: 1%;
+}
+
+.row {
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+.row,
+.row > .column {
+    padding: 10px;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    display: block;
+}
+
+.text {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: black;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+.button-for-order {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    text-color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.row:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.content {
+    background-color: white;
+    border-radius: 1%;
+    padding: 10px;
+}
+
+.show_none {
+    display: none;
+}
+
+.show_block {
+    display: block;
+}
+
+.btn {
+    border-radius: 5%;
+    border: none;
+    outline: none;
+    padding: 12px 25px;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+hr.new1 {
+    border: 1px solid white;
+    width: 100%;
+/*    position: relative;*/
+}
+
+@media (max-width: 1190px){
+    .column {
+        width: 100%;
+    }
+}
+
+/*@media (max-width: 1085px) {
+    hr.new1 {
+
+    }
+}*/
+
+/*grid_photo_guitars*/
+
+/*------------------------------------------------------------------------------------------------------------------*/
+
+/*order_form*/
+.buy-button {
+    border-radius: 5px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    text-color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container_for_order {
+  padding: 16px;
+  width: 100%;
+}
+
+
+.order_form {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+
+.form_order-content {
+  background-color: rgba(255,255,255,1);
+  margin: 1% auto 1% auto;
+  border: 4px solid #888;
+  border-radius: 10px;
+  width: 35%;
+  height: 90%;
+}
+
+
+/*order_form*/
+/*------------------------------------------------------------------------------------------------------------------*/
