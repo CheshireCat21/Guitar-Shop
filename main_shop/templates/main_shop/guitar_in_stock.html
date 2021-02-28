@@ -62,6 +62,7 @@ Modal">times</span>
 <div class="row">
 <!--    guitar замінить на guitars, а el на guitar, так лучше чітаємость -->
     {% for el in guitar %}
+<!--    айдішка нада для того шоб удобно вибирать елємєнти, пользуйся :)-->
         <div class="column {{ el.guitar_model }}" id="guitar-block-{{ el.pk }}">
             <div class="content">
                 <img src="{{ el.guitar_img.url }}" style="width:100%">
