@@ -23,9 +23,12 @@ function filterSelection(c) {
 }
 
 
-function MakeOrder(text, guitar) {
+function MakeOrder(text, img, guitar) {
     order_form.style.display = 'block';
     console.log(text, guitar);
+
+    let photo = document.getElementById('photo-block');
+    photo.src = img;
 }
 
 window.onclick = function(event) {

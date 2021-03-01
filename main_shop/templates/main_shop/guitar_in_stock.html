@@ -71,95 +71,17 @@ Modal">times</span>
                 <button class="button-for-order"
                         onclick="MakeOrder(
                             'guitar model {{ el.model }}',
-                             {{guitars_json}}
+                            '{{ el.guitar_img.url }}',
+                             {{ guitars_json }}
                              )">
-                    {{ el }}
+
                     make an order {{ el.price }}$
                 </button>
             </div>
         </div>
     {% endfor %}
 </div>
-<!-- оцей блок так точно нада тупо стерти з лиця зємлі :) -->
-<div class="row">
-    <div class="column ibanez">
-        <div class="content">
-            <img src="{% static 'main_shop/img/guitar1.jpg' %}" alt="Lights" style="width:100%">
-            <h4>Ibanez</h4>
-            <p>Guitar model - 1</p>
-            <button class="button-for-order" onclick="MakeOrder('guitar model 1')">make an order</button>
-        </div>
 
-    </div>
-
-    <div class="column ibanez">
-        <div class="content">
-        <img src="{% static 'main_shop/img/guitar2.jpg' %}" alt="Lights" style="width:100%">
-          <h4>Ibanez</h4>
-          <p>Guitar model - 2</p>
-          <button class="button-for-order" onclick="MakeOrder('guitar model 2')">make an order</button>
-        </div>
-    </div>
-
-    <div class="column ibanez">
-        <div class="content">
-        <img src="{% static 'main_shop/img/guitar3.jpg' %}" alt="Lights" style="width:100%">
-          <h4>Ibanez</h4>
-          <p>Guitar model - 3</p>
-          <button class="button-for-order" onclick="MakeOrder('guitar model 3')">make an order</button>
-        </div>
-    </div>
-
-    <div class="column ltd">
-        <div class="content">
-          <img src="{% static 'main_shop/img/guitar4.jpg' %}" alt="Car" style="width:100%">
-          <h4>LTD</h4>
-          <p>Guitar model - 4</p>
-          <button class="button-for-order" onclick="MakeOrder('guitar model 4')">make an order</button>
-        </div>
-    </div>
-    <div class="column ltd">
-        <div class="content">
-        <img src="{% static 'main_shop/img/guitar5.jpg' %}" alt="Car" style="width:100%">
-          <h4>LTD</h4>
-          <p>Guitar model - 5</p>
-          <button class="button-for-order" onclick="MakeOrder('guitar model 5')">make an order</button>
-        </div>
-    </div>
-    <div class="column ltd">
-        <div class="content">
-        <img src="{% static 'main_shop/img/guitar6.jpg' %}" alt="Car" style="width:100%">
-          <h4>LTD</h4>
-          <p>Guitar model - 6</p>
-          <button class="button-for-order" onclick="MakeOrder('guitar model 6')">make an order</button>
-        </div>
-    </div>
-
-    <div class="column b.c.rich">
-        <div class="content">
-          <img src="{% static 'main_shop/img/guitar7.jpg' %}" alt="Car" style="width:100%">
-          <h4>B.S.Rich</h4>
-          <p>Guitar model - 7</p>
-          <button class="button-for-order" onclick="MakeOrder('guitar model 7')">make an order</button>
-        </div>
-    </div>
-    <div class="column b.c.rich">
-        <div class="content">
-        <img src="{% static 'main_shop/img/guitar8.jpg' %}" alt="Car" style="width:100%">
-          <h4>B.S.Rich</h4>
-          <p>Guitar model - 8</p>
-          <button class="button-for-order" onclick="MakeOrder('guitar model 8')">make an order</button>
-        </div>
-    </div>
-    <div class="column b.c.rich">
-        <div class="content">
-        <img src="{% static 'main_shop/img/guitar9.jpg' %}" alt="Car" style="width:100%">
-          <h4>B.S.Rich</h4>
-          <p>Guitar model - 9</p>
-          <button class="button-for-order" onclick="MakeOrder('guitar model 9')">make an order</button>
-        </div>
-    </div>
-</div>
 <!--Guitars in stock-->
 
 <!------------------------------------------------------------------------------------------------------------------->
@@ -178,7 +100,7 @@ Modal">times</span>
                         <p class="gt_inf1">Guitar Model: {{ el.guitar_model }}</p>
                         <p class="gt_inf2">Guitar Brand: {{ el.brand }}</p>
                         <p class="gt_inf3">Guitar Price: {{ el.price }}</p>
-                    <img src="{{ el.guitar_img.url }}" style="width:100%" alt=""><br>
+                    <img id="photo-block" src="{{ el.guitar_img.url }}" style="width:100%" alt=""><br>
                 {% endif %}
             {% endfor %}
             <button class="buy-button">buy it</button>
